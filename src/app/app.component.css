@@ -1,0 +1,10 @@
+.nav-pills>li>a {
+    border-radius: 0px;
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.nav-pills>li.active>a {
+    color: #fff;
+    background-color: rgba(230, 47, 47, 0.651);
+}
