@@ -1,0 +1,31 @@
+<div class="container">
+        <div class="row">
+          <div class="col-10">
+            <div class="jumbotron">
+              <h2>Create New Virtual Card</h2>
+              <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+                <div class="form-group">
+                  <label for="cardName">Card Name</label>
+                  <input type="text"  class="form-control" formControlName="cardName" [ngClass]="{'is-invalid':form.get('firstName').touched}" placeholder="eg., Online Payments" required />
+                </div>
+                <div class="form-group">
+                    <label for="selectAccount">Select Account</label>
+                    <select class="mandatory form-control" formControlName="selectAccount"> 
+                                <!-- <option value="null" selected>PleaseSelect | translate</option> -->
+                                <option value="myWallet" selected>My Wallet</option><span> <p>Balance: 100000</p></span>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="amount">Amount</label>
+                  <input type="text" class="form-control" formControlName="amount" [ngClass]="{'is-invalid':form.get('amount').touched}" required />
+                  <div class="invalid-feedback">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary"  [disabled]="!form.valid" (click)= "onCreateCard();">Create Card</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

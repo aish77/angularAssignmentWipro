@@ -1,25 +1,35 @@
 <div class="container">
+   <!-- BRAND LOGO AND COPY -->
+   <div class="logo brand">
+      <img src="../../assets/wallet.png" width="80px" alt="Login" class="logo-img" />
+      <!-- <i class="fa fa-cloud logo-img" width="80px" aria-hidden="true" style="font-size:70px; color:var(--color-primary)"></i> -->       
+      <strong> MyVirtualWallet</strong>
+    </div>
   <div class="row">
     <div class="col-md-12" style="padding-left: 0px;">
       <ul (click)="show = false;" class="nav nav-pills">
         <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="/home">HOME</a>
+          <a routerLink="/dashboard">Dashboard</a>
         </li>
         <li role="presentation" routerLinkActive="active">
-          <a routerLink="/projects">PROJECTS</a>
+          <a routerLink="/viewCards">View Cards</a>
         </li>
         <li role="presentation" routerLinkActive="active">
-          <a [routerLink]="['/services']">SERVICES</a>
+          <a [routerLink]="['/topupCard']">TopUp Cards</a>
         </li>
         <li role="presentation" routerLinkActive="active">
-          <a [routerLink]="['/contact']">CONTACT</a>
+          <a [routerLink]="['/logout']">LogOut</a>
         </li>
       </ul>
     </div>
   </div>
-  <div class="row">
+  <div>
+    <router-outlet></router-outlet>
+    <!-- <app-login></app-login> -->
+  </div>
+  <!-- <div class="row">
     <div class="col-md-4" style="text-align: center;">
-      <!-- Below is the special router directive -->
+      <!-- Below is the special router directive 
       <div *ngIf="!show; else elseBlock">
         <router-outlet></router-outlet>
       </div>
@@ -27,8 +37,8 @@
         <h2 style="font-style: bold;">Please click a menu item</h2>
       </ng-template>
     </div>
-  </div>
-    <div class="row">
+  </div> -->
+    <!-- <div class="row">
         <p appHighlight> If you use this directive for a para, background color of the para should become blue when mouseenter event occurs
           on the para element and no background color when mouseleave event occurs. </p>
       </div>
@@ -38,12 +48,12 @@
     <button class="btn btn-primary" (click)="onAnimateOut(); alphabetAnimate = !alphabetAnimate;" style="margin:5px; background-color: rgba(230, 47, 47, 0.651);" [disabled]=alphabetAnimate>
     Animate Out Alphabet </button>
     <div style="width: 50px; height: 50px; padding: 15px" [@divState]="state">
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <ul class="list-group">
         <li class="list-group-item" [@alphabet] *ngFor="let list of lists">
           <h1> {{ list }} </h1>
         </li>
       </ul>
-    </div>
+    </div> -->
 </div>

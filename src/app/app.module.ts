@@ -2,35 +2,49 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HighlightDirective } from './feature/highlight.directive';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { ViewCardsComponent } from './view-cards/view-cards.component';
 import { ServicesComponent } from './services/services.component';
-import { ContactComponent } from './contact/contact.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TopupCardComponent } from './topup-card/topup-card.component';
+import { LoginComponent } from './login/login.component';
+
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CreateNewCardComponent } from './view-cards/create-new-card/create-new-card.component';
+import { SuccessComponent } from './view-cards/create-new-card/success/success.component'
 
 const appRoutes: Routes = [
   { path: '', component: AppComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'services', component: ServicesComponent},
-  { path: 'contact', component: ContactComponent}
+  { path: '', component: LoginComponent},
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'viewCards', component: ViewCardsComponent ,
+    children:[{path:'createNewCard', component: CreateNewCardComponent,
+      children:[{path:'success', component: SuccessComponent}]}]},
+  { path: 'topupCard', component: TopupCardComponent},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ProjectsComponent,
-    ServicesComponent,
-    ContactComponent,
-    HighlightDirective
+    DashboardComponent,
+    ViewCardsComponent,
+    TopupCardComponent,
+    LoginComponent,
+    CreateNewCardComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserModule, 
+    FormsModule, 
+    MatCheckboxModule, 
+    MatTabsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

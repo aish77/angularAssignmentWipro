@@ -1,0 +1,9 @@
+h3 {
+    text-decoration: underline;
+  }
+
+.card-container {
+    border-width:2px;  
+    border-style:solid;
+    margin: 10px;
+  }

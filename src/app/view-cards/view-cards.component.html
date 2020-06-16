@@ -1,0 +1,19 @@
+<div class="container" *ngIf="!createCardClicked; else elseBlock">
+  <div class="row">
+    <div class="col-md-3 card-container">
+      <!-- <div *ngFor = "let card of cards"> -->
+      <h5>Amazon</h5>
+      <p>4100 0000 0000 0000</p>
+      <p>10/2020</p>
+      <h2>$4000</h2>
+      <!-- </div>         -->
+    </div>
+    <div class="col-md-3 card-container btn" (click)="createCard();">
+        <i type="button" class="material-icons custom" style="padding: 20px 65px">add_circle</i>
+      <p style="padding: 0px 15px">Create a virtual card</p>
+    </div>
+  </div>
+</div>
+<ng-template #elseBlock>
+    <router-outlet></router-outlet>
+</ng-template>
