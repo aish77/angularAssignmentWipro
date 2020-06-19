@@ -16,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CreateNewCardComponent } from './view-cards/create-new-card/create-new-card.component';
 import { SuccessComponent } from './view-cards/create-new-card/success/success.component'
+import {HttpClientModule} from '@angular/common/http'
 
 const appRoutes: Routes = [
   { path: '', component: AppComponent },
@@ -44,9 +45,11 @@ const appRoutes: Routes = [
     FormsModule, 
     MatCheckboxModule, 
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
